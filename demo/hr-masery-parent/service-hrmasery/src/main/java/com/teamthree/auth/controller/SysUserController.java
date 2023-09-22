@@ -18,6 +18,13 @@ public class SysUserController {
     @Autowired
     private SysUserService sysUserService;
 
+    @ApiOperation(value = "更改用户状态（1：正常 0：停用）")
+    @GetMapping("updateStatus/{id}/{status}")
+    public Result updateStatus(@PathVariable Long id, @PathVariable Integer status) {
+        sysUserService.updateStatus(id, status);
+        return Result.ok();
+    }
+
 
     @ApiOperation(value = "获取用户")
     @GetMapping("/get/{id}")

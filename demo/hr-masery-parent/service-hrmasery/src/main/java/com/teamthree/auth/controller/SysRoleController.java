@@ -3,12 +3,14 @@ package com.teamthree.auth.controller;
 import com.teamthree.auth.service.SysRoleService;
 import com.teamthree.common.result.Result;
 import com.teamthree.model.system.SysRole;
+import com.teamthree.vo.system.AssginRoleVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Api(tags = "Role Management")
 @RestController
@@ -17,6 +19,20 @@ public class SysRoleController {
 
     @Autowired
     private SysRoleService sysRoleService;
+
+    @ApiOperation(value = "根据用户获取角色数据")
+    @GetMapping("/getRoleList/{userId}")
+    public Result getRoleIdByUserId(@PathVariable Long userId) {
+        Map<String, Object> roleMap = sysRoleService.getRoleListByUserid(userId);
+        return Result.ok(roleMap);
+    }
+
+    @ApiOperation(value = "分配新角色")
+    @PostMapping("/toAssign")
+    public Result toAssignRole(@RequestBody AssginRoleVo assginRoleVo) {
+        sysRoleService.toAssign(assginRoleVo);
+        return Result.ok();
+    }
 
     @ApiOperation(value = "查找所有角色")
     @GetMapping("/findAll")

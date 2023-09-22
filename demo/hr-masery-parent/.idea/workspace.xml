@@ -41,7 +41,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "C:/Users/36592/Documents/GitHub/project-team-3/demo",
+    "last_opened_file_path": "C:/Users/36592/Documents/GitHub/project-team-3/demo/hr-masery-parent/model/src/main/java/com/teamthree/vo/system",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -50,15 +50,17 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "spring.configuration.checksum": "bd9559ef6e68e4ab8477b81d9d5800c9",
+    "spring.configuration.checksum": "4d689151a58ec81107217662337aa15a",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\model\src\main\java\com\teamthree\vo\system" />
+      <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\service-hrmasery\src\main\java\com\teamthree\auth\mapper" />
+      <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\service-hrmasery\src\main\java\com\teamthree\auth\service" />
       <recent name="C:\devlp\spring\hr-masery-parent\model\src\main\java\com\teamthree\model\system" />
       <recent name="C:\devlp\spring\hr-masery-parent\model\src\main\java\com\teamthree\model" />
-      <recent name="C:\devlp\spring\hr-masery-parent\model\src\main\java\com\teamthree\model\base" />
     </key>
   </component>
   <component name="RunManager">
@@ -94,6 +96,8 @@
       <workItem from="1695264199595" duration="140000" />
       <workItem from="1695264361504" duration="859000" />
       <workItem from="1695265339766" duration="972000" />
+      <workItem from="1695346094761" duration="89000" />
+      <workItem from="1695346496768" duration="7698000" />
     </task>
     <servers />
   </component>
