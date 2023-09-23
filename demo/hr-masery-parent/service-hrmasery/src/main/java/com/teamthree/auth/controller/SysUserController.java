@@ -2,6 +2,7 @@ package com.teamthree.auth.controller;
 
 import com.teamthree.auth.service.SysUserService;
 import com.teamthree.common.result.Result;
+import com.teamthree.common.utils.MD5;
 import com.teamthree.model.system.SysUser;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -36,6 +37,8 @@ public class SysUserController {
     @ApiOperation(value = "保存用户")
     @PostMapping("/save")
     public Result save(@RequestBody SysUser user) {
+        String passwordWithMD5 = MD5.encrypt(user.getPassword());
+        user.setPassword(passwordWithMD5);
         sysUserService.save(user);
         return Result.ok();
     }
