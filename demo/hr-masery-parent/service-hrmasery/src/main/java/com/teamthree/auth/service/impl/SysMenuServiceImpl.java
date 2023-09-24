@@ -9,6 +9,7 @@ import com.teamthree.auth.tools.BuildMenu;
 import com.teamthree.model.system.SysMenu;
 import com.teamthree.model.system.SysRoleMenu;
 import com.teamthree.vo.system.AssignMenuVo;
+import com.teamthree.vo.system.RouterVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -41,7 +42,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         LambdaQueryWrapper<SysMenu> menuWrapper = new LambdaQueryWrapper<>();
         menuWrapper.eq(SysMenu::getStatus,1);
 
-        // available perm for the Sys-menu
+        // 可以被选择操作权限
         List<SysMenu> allSysMenuList = baseMapper.selectList(menuWrapper);
 
         // 根据roleid去查询数据库对应的sysrolemenu对象
@@ -89,5 +90,46 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
             sysRoleMenu.setRoleId(assignMenuVo.getRoleId());
             sysRoleMenuService.save(sysRoleMenu);
         }
+    }
+
+    @Override
+    public List<SysMenu> findUserMenuByUserId(Long userId) {
+        List<SysMenu> sysMenuList = null;
+        if(userId == 1) {
+            LambdaQueryWrapper<SysMenu> wrapper = new LambdaQueryWrapper<>();
+            wrapper.eq(SysMenu::getStatus,1);
+            wrapper.orderByAsc(SysMenu::getSortValue);
+            baseMapper.selectList(wrapper);
+        }else{
+            sysMenuList = baseMapper.findListByUserId(userId);
+        }
+
+        //List<SysMenu> sysMenuTreeLists = BuildMenu.buildTree(sysMenuList);
+
+        // Build the corresponding structure according to the front end, 根据前端再改
+        ///// need to do
+        return sysMenuList;
+    }
+
+    @Override
+    public List<String> findUserPermByUserId(Long userId) {
+        List<SysMenu> sysButtonList = null;
+        if (userId == 1) {
+            LambdaQueryWrapper<SysMenu> wrapper = new LambdaQueryWrapper<>();
+            wrapper.eq(SysMenu::getStatus,1);
+            sysButtonList = baseMapper.selectList(wrapper);
+        } else {
+            sysButtonList = baseMapper.findListByUserId(userId);
+        }
+
+        List<String> permsList = new ArrayList<>();
+        for(SysMenu perm : sysButtonList) {
+            if(perm.getType() == 2) {
+                String perms = perm.getPerms();
+                permsList.add(perms);
+            }
+        }
+
+        return permsList;
     }
 }

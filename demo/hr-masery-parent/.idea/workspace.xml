@@ -16,6 +16,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="spring-beans.schema" />
       </list>
     </option>
   </component>
@@ -41,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "C:/Users/36592/Documents/GitHub/project-team-3/demo/hr-masery-parent/model/src/main/java/com/teamthree/vo/system",
+    "last_opened_file_path": "C:/Users/36592/Documents/GitHub/project-team-3/demo/hr-masery-parent/service-hrmasery/src/main/java/com/teamthree/auth/mapper/xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -49,18 +50,18 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "4d689151a58ec81107217662337aa15a",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\service-hrmasery\src\main\java\com\teamthree\auth\mapper\xml" />
+      <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\service-hrmasery\src\main\resources" />
       <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\model\src\main\java\com\teamthree\vo\system" />
       <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\common\common-util\src\main\java\com\teamthree\common\utils" />
       <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\service-hrmasery\src\main\java\com\teamthree\auth\mapper" />
-      <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\model\src\main\java\com\teamthree\model\system" />
-      <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\service-hrmasery\src\main\java\com\teamthree\auth\service" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ServiceAuthApplication">
@@ -127,7 +128,8 @@
       <workItem from="1695346094761" duration="89000" />
       <workItem from="1695346496768" duration="7698000" />
       <workItem from="1695441851019" duration="1379000" />
-      <workItem from="1695480072341" duration="16698000" />
+      <workItem from="1695480072341" duration="31532000" />
+      <workItem from="1695529018212" duration="1613000" />
     </task>
     <servers />
   </component>

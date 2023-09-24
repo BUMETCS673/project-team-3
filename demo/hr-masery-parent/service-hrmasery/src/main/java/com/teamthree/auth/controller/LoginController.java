@@ -8,17 +8,19 @@ import com.teamthree.common.exception.GlobalExceptionHandler;
 import com.teamthree.common.jwt.JwtHelper;
 import com.teamthree.common.result.Result;
 import com.teamthree.common.utils.MD5;
+import com.teamthree.model.system.SysMenu;
 import com.teamthree.model.system.SysUser;
 import com.teamthree.vo.system.LoginVo;
+import com.teamthree.vo.system.RouterVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Api(tags = "Background Login Management")
@@ -58,14 +60,35 @@ public class LoginController {
             throw new CustomException(202,"The user has been disabled");
         }
 
-        //6 使用jwt根据用户id和用户名称生成token字符串
+        //使用jwt根据用户id和用户名称生成token字符串
         String token = JwtHelper.createToken(sysUser.getId(), sysUser.getUsername());
-        //7 返回
+
+        //返回
         Map<String,Object> map = new HashMap<>();
         map.put("token",token);
         return Result.ok(map);
     }
 
+    @ApiOperation(value = "获取用户信息接口")
+    @GetMapping("/getUserInfo")
+    public Result getUserInfo(HttpServletRequest request){
+        String token = request.getHeader("token");
+        Long userId = 13L; //JwtHelper.getUserId(token);
+        SysUser sysUser = sysUserService.getById(userId);
+
+        List<SysMenu> userMenuList = sysMenuService.findUserMenuByUserId(userId);
+
+        List<String> permissionsList = sysMenuService.findUserPermByUserId(userId);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("name",sysUser.getName());
+        map.put("permissions",permissionsList );
+        map.put("menu", userMenuList);
+        return Result.ok(map);
+
+    }
+
+    @ApiOperation(value = "登出")
     @PostMapping("/logout")
     public Result logout(){
         return Result.ok();
