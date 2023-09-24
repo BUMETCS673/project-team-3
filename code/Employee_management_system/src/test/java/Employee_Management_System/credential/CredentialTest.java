@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CredentialTest {
 
+    Credential credential = new Credential();
     @Test
     void getUsername() {
         // Arrange
-        Credential credential = new Credential();
         String expectedUsername = "someUser";
 
         // Act
@@ -25,7 +25,6 @@ class CredentialTest {
     @Test
     void setUsername() {
         // Arrange
-        Credential credential = new Credential();
         String expectedUsername = "someOtherUser";
 
         // Act
@@ -38,7 +37,6 @@ class CredentialTest {
     @Test
     void getPasswordHash() {
         // Arrange
-        Credential credential = new Credential();
         String expectedPasswordHash = "someHashedPassword";
 
         // Act
@@ -51,7 +49,6 @@ class CredentialTest {
     @Test
     void setPasswordHash() {
         // Arrange
-        Credential credential = new Credential();
         String expectedPasswordHash = "someOtherHashedPassword";
 
         // Act
