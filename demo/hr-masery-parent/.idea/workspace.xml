@@ -14,9 +14,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="spring-beans.schema" />
       </list>
     </option>
   </component>
@@ -51,7 +51,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "4d689151a58ec81107217662337aa15a",
+    "spring.configuration.checksum": "548c03d98b4a615da3012fb8cab99e05",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -130,6 +130,8 @@
       <workItem from="1695441851019" duration="1379000" />
       <workItem from="1695480072341" duration="31532000" />
       <workItem from="1695529018212" duration="1613000" />
+      <workItem from="1695586826982" duration="13911000" />
+      <workItem from="1695606983121" duration="6738000" />
     </task>
     <servers />
   </component>

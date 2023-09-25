@@ -5,8 +5,8 @@ import lombok.Data;
 
 @Data
 public class CustomException extends RuntimeException{
-    private Integer code;//状态码
-    private String msg;//描述信息
+    private Integer code;
+    private String msg;
 
     public CustomException(Integer code,String msg) {
         super(msg);

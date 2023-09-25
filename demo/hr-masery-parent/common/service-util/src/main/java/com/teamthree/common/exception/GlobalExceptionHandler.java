@@ -12,7 +12,14 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public Result error(Exception e) {
         e.printStackTrace();
-        return Result.fail().message("执行全局异常处理...");
+        return Result.fail().message("Perform global exception handling");
+    }
+
+    @ExceptionHandler(CustomException.class)
+    @ResponseBody
+    public Result error(CustomException e) {
+        e.printStackTrace();
+        return Result.fail().code(e.getCode()).message(e.getMsg());
     }
 
 

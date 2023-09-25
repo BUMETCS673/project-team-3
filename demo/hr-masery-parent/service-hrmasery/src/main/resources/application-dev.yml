@@ -2,7 +2,7 @@ server:
   port: 8800
 mybatis-plus:
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 查看日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:com/teamthree/auth/mapper/xml/*.xml
 spring:
   datasource:
@@ -11,3 +11,6 @@ spring:
     url: jdbc:mysql://localhost:3306/hr-masery?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf-8
     username: root
     password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT
