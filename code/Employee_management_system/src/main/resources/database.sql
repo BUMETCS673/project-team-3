@@ -14,7 +14,8 @@ CREATE TABLE user_credential (
                                user_id VARCHAR(100) NOT NULL
 );
 CREATE TABLE vacation_request (
-                               employee_id INT AUTO_INCREMENT PRIMARY KEY,
+                               request_id INT AUTO_INCREMENT PRIMARY KEY,
+                               employee_id INT,
                                start_date VARCHAR(20) NOT NULL,
                                end_date VARCHAR(25) NOT NULL,
                                reason VARCHAR(300),
