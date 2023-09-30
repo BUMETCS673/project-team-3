@@ -1,4 +1,4 @@
-package com.teamthree.common.config;
+package Employee_Management_System.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,17 +9,17 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
+import springfox.documentation.service.Parameter;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-import springfox.documentation.service.Parameter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 // knife4j configuration website: https://zhuanlan.zhihu.com/p/505437796
-// website for knife4J: http://localhost:8800/doc.html
-// http://localhost:8800/admin/system/sysRole/findAll
+// website for knife4J: http://localhost:8801/doc.html
+// http://localhost:8801/admin/system/user/get/1
 
 
 @Configuration
@@ -45,7 +45,7 @@ public class knife4jConfig {
                 .apiInfo(adminApiInfo())
                 .select()
                 //只显示admin路径下的页面
-                .apis(RequestHandlerSelectors.basePackage("com.teamthree"))
+                .apis(RequestHandlerSelectors.basePackage("Employee_Management_System"))
                 .paths(PathSelectors.regex("/admin/.*"))
                 .build()
                 .globalOperationParameters(pars);

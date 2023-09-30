@@ -1,6 +1,6 @@
-package com.teamthree.common.exception;
+package Employee_Management_System.exception;
 
-import com.teamthree.common.result.StatusCodeEnum;
+import Employee_Management_System.result.StatusCodeEnum;
 import lombok.Data;
 
 @Data

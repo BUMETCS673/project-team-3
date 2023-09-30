@@ -42,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "C:/Users/36592/Documents/GitHub/project-team-3/demo/hr-masery-parent/service-hrmasery/src/main/java/com/teamthree/auth/mapper/xml",
+    "last_opened_file_path": "C:/devlp/spring/project-team-3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,11 +57,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\common\service-util\src\main\java\com\teamthree\common\exception" />
       <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\service-hrmasery\src\main\java\com\teamthree\auth\mapper\xml" />
       <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\service-hrmasery\src\main\resources" />
       <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\model\src\main\java\com\teamthree\vo\system" />
       <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\common\common-util\src\main\java\com\teamthree\common\utils" />
-      <recent name="C:\Users\36592\Documents\GitHub\project-team-3\demo\hr-masery-parent\service-hrmasery\src\main\java\com\teamthree\auth\mapper" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ServiceAuthApplication">
@@ -107,8 +107,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ServiceAuthApplication" />
-        <item itemvalue="Application.MD5" />
         <item itemvalue="Application.JwtHelper" />
+        <item itemvalue="Application.MD5" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +131,23 @@
       <workItem from="1695480072341" duration="31532000" />
       <workItem from="1695529018212" duration="1613000" />
       <workItem from="1695586826982" duration="13911000" />
-      <workItem from="1695606983121" duration="6738000" />
+      <workItem from="1695606983121" duration="7231000" />
+      <workItem from="1695614621556" duration="168000" />
+      <workItem from="1695614888299" duration="146000" />
+      <workItem from="1695657438609" duration="9819000" />
+      <workItem from="1695671233762" duration="3135000" />
+      <workItem from="1695687330488" duration="45000" />
+      <workItem from="1695688365493" duration="105000" />
+      <workItem from="1695827492056" duration="5812000" />
+      <workItem from="1695949328308" duration="2919000" />
+      <workItem from="1695952397308" duration="99000" />
+      <workItem from="1695952707384" duration="1005000" />
+      <workItem from="1695954007453" duration="2592000" />
+      <workItem from="1696001155461" duration="14438000" />
+      <workItem from="1696024990944" duration="2343000" />
+      <workItem from="1696039545381" duration="3729000" />
+      <workItem from="1696043575775" duration="495000" />
+      <workItem from="1696089820738" duration="3637000" />
     </task>
     <servers />
   </component>
@@ -153,5 +169,41 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/common/spring-security/src/main/java/com/teamthree/security/filter/TokenLoginFilter.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/common/spring-security/src/main/java/com/teamthree/security/filter/TokenLoginFilter.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/common/spring-security/src/main/java/com/teamthree/security/filter/TokenLoginFilter.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/common/spring-security/src/main/java/com/teamthree/security/filter/TokenAuthenticationFilter.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/common/spring-security/src/main/java/com/teamthree/security/filter/TokenAuthenticationFilter.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service-hrmasery/src/main/java/com/teamthree/auth/service/impl/UserDetailsServiceImpl.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
