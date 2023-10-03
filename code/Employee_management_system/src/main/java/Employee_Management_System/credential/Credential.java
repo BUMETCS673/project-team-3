@@ -10,20 +10,16 @@ import jakarta.persistence.Table;
 public class Credential {
 
     @Id
-    private String username; // or email
+    private String username;
     @Column(name = "password_hash")
     private String passwordHash;
-//    @Column(name = "employee_id")
-//    private Integer employeeId;
 
     public Credential(String username, String passwordHash) {
         this.username = username;
         this.passwordHash = passwordHash;
-//        this.employeeId = employeeId;
     }
 
     public Credential() {
-
     }
 
     public String getUsername() {

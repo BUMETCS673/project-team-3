@@ -42,14 +42,17 @@ public class EmployeeService {
         employeeRepository.deleteById(employeeId);
     }
 
-    //non-query based method
+    //non-query based method, changed
     @Transactional
     public void updateEmployeeName(Integer employeeId, String name) {
-
-        Employee employee = employeeRepository.findById(employeeId).get();
-
-        employee.setName(name);
-
+        if (employeeRepository.findById(employeeId).isPresent()){
+            Employee employee = employeeRepository.findById(employeeId).get();
+            employee.setName(name);
+            employeeRepository.save(employee);
+        }
+        else{
+            throw new IllegalArgumentException("Employee with ID " + employeeId + " doesn't exist");
+        }
     }
 
     public Optional<Employee> getEmployeeById(Long id) {

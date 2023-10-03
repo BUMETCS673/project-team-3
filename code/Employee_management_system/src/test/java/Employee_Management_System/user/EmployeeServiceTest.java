@@ -3,6 +3,7 @@ package Employee_Management_System.user;
 import Employee_Management_System.user.Employee;
 import Employee_Management_System.user.EmployeeRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 //@SpringBootApplication
 @DataJpaTest
@@ -21,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class EmployeeServiceTest {
     @Autowired
     private EmployeeRepository employeeRepository;
+    private EmployeeService employeeService;
     // test cases for AddNewEmployee
     @Test
     public void testAddNewEmployeeSingle() {
@@ -174,15 +177,19 @@ class EmployeeServiceTest {
     @Test
     void updateEmployeeNameNullUserID() {
         Integer userId = 1;
-        if (employeeRepository.findEmployeeById(userId).isPresent()){
-            Employee optionalEmployee = employeeRepository.findEmployeeById(userId).get();
-            optionalEmployee.setName("John");
-            employeeRepository.save(optionalEmployee);
-            Employee updatedEmployee = employeeRepository.findEmployeeById(userId).get();
+        Optional<Employee> optionalEmployee = employeeRepository.findEmployeeById(userId);
+        if (optionalEmployee.isPresent()) {
+            Employee existingEmployee = optionalEmployee.get();
+            existingEmployee.setName("John");
+            employeeRepository.save(existingEmployee);
+            Employee updatedEmployee = employeeRepository.findEmployeeById(userId).orElse(null);
+
+            Assertions.assertThat(updatedEmployee).isNotNull();
             Assertions.assertThat(updatedEmployee.getName()).isEqualTo("John");
-        }
-        else{
-            System.out.println("Job ID doesn't exist");
+        } else {
+            assertThrows(NullPointerException.class, () -> {
+                employeeService.updateEmployeeName(userId, "John");
+            });
         }
     }
 
