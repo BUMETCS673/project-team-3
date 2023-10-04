@@ -1,5 +1,6 @@
 package Employee_Management_System.Security.Config;
 
+import Employee_Management_System.credential.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +15,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import Employee_Management_System.Security.Filter.JwtAuthenticationFilter;
 import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
+
+import static org.springframework.http.HttpMethod.POST;
 
 @Configuration
 @EnableWebSecurity
@@ -36,10 +39,12 @@ public class SecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .requestMatchers("/api/v1/auth/**", "/api/v1/auth/authenticate")
+                .requestMatchers("/api/v1/auth/**")
                 //.requestMatchers(new MvcRequestMatcher(introspector, "/api/vi/auth/**"))
 
                 .permitAll()
+                //.requestMatchers( "/api/v1/auth/**").hasAnyRole(Role.USER.name())
+                //.requestMatchers(POST, "/api/v1/auth/**").hasAnyAuthority(Role.USER.name())
 
 
 

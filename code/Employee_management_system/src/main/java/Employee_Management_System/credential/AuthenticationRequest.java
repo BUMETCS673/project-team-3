@@ -1,16 +1,13 @@
 package Employee_Management_System.credential;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 public class AuthenticationRequest {
-
-    private String userName;
+    private String username;
     String password;
 }
