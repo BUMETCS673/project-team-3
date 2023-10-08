@@ -21,7 +21,6 @@ import static org.springframework.http.HttpMethod.POST;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-@EnableMethodSecurity
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthFilter;
@@ -39,17 +38,26 @@ public class SecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .requestMatchers("/api/v1/auth/**")
-                //.requestMatchers(new MvcRequestMatcher(introspector, "/api/vi/auth/**"))
+                .requestMatchers(
+                        "/api/v1/auth/**",
+                        "/index*",
+                        "/static/**",
+                        "/*.js",
+                        "/*.json",
+                        "/*.ico")
 
                 .permitAll()
                 //.requestMatchers( "/api/v1/auth/**").hasAnyRole(Role.USER.name())
                 //.requestMatchers(POST, "/api/v1/auth/**").hasAnyAuthority(Role.USER.name())
 
 
-
                 .anyRequest()
                 .authenticated()
+                .and()
+                .formLogin().loginPage("/index.html")
+                .loginProcessingUrl("/perform_login")
+                .defaultSuccessUrl("/homepage.html", true)
+                .failureUrl("/index.html?error=true")
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

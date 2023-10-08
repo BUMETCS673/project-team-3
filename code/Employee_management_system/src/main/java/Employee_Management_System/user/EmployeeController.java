@@ -2,6 +2,7 @@ package Employee_Management_System.user;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,9 +20,14 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
+//    @GetMapping("/allemployee")
+//    public List<Employee> getAllEmployee(){
+//        return employeeService.getAllEmployee();
+//    }
+
     @GetMapping("/allemployee")
-    public List<Employee> getAllEmployee(){
-        return employeeService.getAllEmployee();
+    public ResponseEntity<List<Employee>> getAllEmployee(){
+        return ResponseEntity.ok(employeeService.getAllEmployee());
     }
 
     @PostMapping
