@@ -1,4 +1,4 @@
-package Employee_Management_System.Credential;
+package Employee_Management_System.credential;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

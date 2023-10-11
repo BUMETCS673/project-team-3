@@ -13,7 +13,7 @@ public class CredentialController {
     private final CredentialService service;
 
     @PostMapping("/signup")
-    public ResponseEntity<Employee_Management_System.Credential.AuthenticationResponse> register(
+    public ResponseEntity<Employee_Management_System.credential.AuthenticationResponse> register(
             @RequestBody RegisterRequest request
     ) {
         return ResponseEntity.ok(service.register(request));
@@ -21,8 +21,8 @@ public class CredentialController {
 
 
     @PostMapping("/signin")
-    public ResponseEntity<Employee_Management_System.Credential.AuthenticationResponse> authenticate(
-            @RequestBody Employee_Management_System.Credential.AuthenticationRequest request
+    public ResponseEntity<Employee_Management_System.credential.AuthenticationResponse> authenticate(
+            @RequestBody Employee_Management_System.credential.AuthenticationRequest request
     ) {
         return ResponseEntity.ok(service.authenticate(request));
     }

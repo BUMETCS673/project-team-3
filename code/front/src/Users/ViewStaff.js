@@ -21,6 +21,7 @@ export default function ViewStaff() {
 
     const loadStaff = async ()=>{
         const result = await api.get(`/employee/${id}`);
+        setUsers(result.data);
     };
 
 

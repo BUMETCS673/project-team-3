@@ -10,7 +10,7 @@ Backend is built using spring boot and maven. To add as a maven project:
 
 ## Database
 
-Database is built using H2 database. 
+Database is built using Postgres database. 
 
 ## FrontEnd
 
@@ -23,6 +23,12 @@ Please make sure you are using at least java 17.
 1) cd to the project directory. 
 2) Run 'mvn clean install' or 'mvn package' to build the jar. 
 3) Run "docker-compose up" . This will build the containers for backend and frontend. 
-4) Open [http://localhost:3000](http://localhost:3000) to view the application in browser. 
+4) Open [http://localhost:3000/login](http://localhost:3000/login) to view the application in browser. 
 
 
+## Remove postgres volume
+
+Since we are using docker, it will retain the records until we manually delete the volume. 
+
+1) cd to "apps" folder
+2) run "rm -R postgres"
