@@ -31,4 +31,14 @@ Please make sure you are using at least java 17.
 Since we are using docker, it will retain the records until we manually delete the volume. 
 
 1) cd to "apps" folder
+<<<<<<< Updated upstream
 2) run "rm -R postgres"
+=======
+2) run "rm -R postgres"
+
+## Helpful docker commands
+
+1) docker volume prune (remove all volumes)
+2) docker system prune (remove all volumes and dangling images)
+3) docker image prune -a (remove all images)
+>>>>>>> Stashed changes
