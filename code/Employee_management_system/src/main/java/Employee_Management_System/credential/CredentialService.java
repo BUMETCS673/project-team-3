@@ -16,7 +16,7 @@ public class CredentialService  {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    public Employee_Management_System.Credential.AuthenticationResponse register(RegisterRequest request) {
+    public Employee_Management_System.credential.AuthenticationResponse register(RegisterRequest request) {
         var user = Credential.builder()
                 .firstname(request.getFirstname())
                 .lastname(request.getLastname())
@@ -26,12 +26,12 @@ public class CredentialService  {
                 .build();
         repository.save(user);
         var jwtToken = jwtService.generateToken(user);
-        return Employee_Management_System.Credential.AuthenticationResponse.builder()
+        return Employee_Management_System.credential.AuthenticationResponse.builder()
                 .accessToken(jwtToken)
                 .build();
     }
 
-    public Employee_Management_System.Credential.AuthenticationResponse authenticate(Employee_Management_System.Credential.AuthenticationRequest request) {
+    public Employee_Management_System.credential.AuthenticationResponse authenticate(Employee_Management_System.credential.AuthenticationRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getUsername(),
@@ -42,7 +42,7 @@ public class CredentialService  {
                 .orElseThrow();
         var jwtToken = jwtService.generateToken(user);
 
-        return Employee_Management_System.Credential.AuthenticationResponse.builder()
+        return Employee_Management_System.credential.AuthenticationResponse.builder()
                 .accessToken(jwtToken)
                 .build();
     }
