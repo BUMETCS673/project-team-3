@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  frontend:
+    container_name: frontend
+    build: ./code/front
+    volumes:
+      - './frontend:/app'
+      - '/app/node_modules'
+    ports:
+      - "3000:3000"
+
+  backend:
+    container_name: backend
+    build: ./code/Employee_management_system
+    depends_on:
+      - postgresqldb
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresqldb:5436/docker_testdb
+      - SPRING_DATASOURCE_USERNAME=docker_postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  postgresqldb:
+    image: postgres:latest
+    container_name: postgresqldb
+    environment:
+      POSTGRES_USER: "docker_postgres"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "docker_testdb"
+      PGPORT: "5436"
+    ports:
+      - "5436:5436"
